@@ -3,6 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="regionModel"
+            type="com.example.appfornewdevs.models.RegionModel" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -10,28 +17,30 @@
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
-            tools:text="Lithuania"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="@{regionModel.name}"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_margin="12dp"
-            android:layout_height="wrap_content"/>
+            tools:text="Lithuania" />
 
         <TextView
             android:id="@+id/populationTitle"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/name"
             android:layout_marginStart="12dp"
-            android:text="@string/population"
-            android:layout_height="wrap_content"/>
+            android:text="@string/population" />
 
         <TextView
             android:id="@+id/population"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/name"
             android:layout_marginStart="12dp"
-            tools:text="3000000"
             android:layout_toEndOf="@+id/populationTitle"
-            android:layout_height="wrap_content"/>
+            android:text="@{String.valueOf(regionModel.population)}"
+            tools:text="3000000" />
 
     </RelativeLayout>
 

@@ -7,7 +7,8 @@ class RegionModel(
     @Bindable
     val name: String,
     @Bindable
-    val population: Long
+    val population: Long,
+    val region: String
 ): BaseObservable(), Comparable<RegionModel>{
 
     override fun compareTo(other: RegionModel): Int {
